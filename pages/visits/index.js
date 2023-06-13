@@ -57,26 +57,28 @@ const Visits = ({ initialVisits }) => {
     }
   };
 
-  const filteredVisits = Array.isArray(visits)
-    ? visits.filter((visit) => {
-        // Filter visits based on search term
-        const searchTermLowerCase = searchTerm.toLowerCase();
-        const user = visit.attributes.user?.toLowerCase();
-        const plotNumber = visit.attributes.plotNumber?.toLowerCase();
-        const id = visit.id.toString();
-        const visitDate = visit.attributes.visitdate?.toLowerCase();
-        const createdAt = visit.attributes.createdAt?.toLowerCase();
+  const filteredVisits = visits.filter((visit) => {
+    // Filter visits based on search term
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    const user = visit.attributes.user?.toLowerCase();
+    const plotNumber = visit.attributes.plotNumber?.toLowerCase();
+    const id = visit.id.toString();
+    const visitDate = visit.attributes.visitdate?.toLowerCase();
+    const createdAt = visit.attributes.createdAt?.toLowerCase();
 
-        return (
-          !searchTerm ||
-          user?.includes(searchTermLowerCase) ||
-          plotNumber?.includes(searchTermLowerCase) ||
-          id.includes(searchTermLowerCase) ||
-          visitDate?.includes(searchTermLowerCase) ||
-          createdAt?.includes(searchTermLowerCase)
-        );
-      })
-    : [];
+    return (
+      !searchTerm ||
+      user?.includes(searchTermLowerCase) ||
+      !searchTerm ||
+      plotNumber?.includes(searchTermLowerCase) ||
+      !searchTerm ||
+      id.includes(searchTermLowerCase) ||
+      !searchTerm ||
+      visitDate?.includes(searchTermLowerCase) ||
+      !searchTerm ||
+      createdAt?.includes(searchTermLowerCase)
+    );
+  });
 
   // Pagination variables
   const itemsPerPage = 10; // Number of items to display per page
@@ -187,18 +189,17 @@ const Visits = ({ initialVisits }) => {
     </div>
   );
 };
-
 export default Visits;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
-    let apiUrl = "https://heritage.top-wp.com/api/visits?populate=*";
+    let apiUrl = "https://heritage.top-wp.com/api/visits";
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Failed to fetch visits");
     }
     const data = await response.json();
-    const initialVisits = data.data; // Assuming the response has a `data` property containing the array of visits
+    const initialVisits = data.data;
     return {
       props: {
         initialVisits,
