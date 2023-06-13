@@ -189,16 +189,17 @@ const Visits = ({ initialVisits }) => {
     </div>
   );
 };
+export default Visits;
 
 export async function getServerSideProps() {
   try {
-    let apiUrl = "https://heritage.top-wp.com/api/visits";
+    let apiUrl = "https://heritage.top-wp.com/api/visits?populate=*";
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Failed to fetch visits");
     }
     const data = await response.json();
-    const initialVisits = data.data;
+    const initialVisits = data;
     return {
       props: {
         initialVisits,
@@ -212,5 +213,3 @@ export async function getServerSideProps() {
     };
   }
 }
-
-export default Visits;
