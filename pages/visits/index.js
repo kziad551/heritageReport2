@@ -189,9 +189,8 @@ const Visits = ({ initialVisits }) => {
     </div>
   );
 };
-export default Visits;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     let apiUrl = "https://heritage.top-wp.com/api/visits";
     const response = await fetch(apiUrl);
@@ -213,3 +212,5 @@ export async function getStaticProps() {
     };
   }
 }
+
+export default Visits;
