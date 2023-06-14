@@ -8,7 +8,6 @@ import Navbar from "../../components/Navbar";
 const VisitDetails = ({ visit }) => {
   const visitId = visit.data[0].id;
   const visits = visit.data[0].attributes;
-
   const baseUrl = "https://heritage.top-wp.com";
   const router = useRouter();
 
