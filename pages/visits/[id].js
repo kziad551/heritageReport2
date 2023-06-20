@@ -882,7 +882,7 @@ const VisitDetails = ({ visit }) => {
 
 export default VisitDetails;
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { params, req, res } = context;
   const { id } = params;
 
