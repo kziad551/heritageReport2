@@ -193,7 +193,7 @@ export default Visits;
 
 export async function getStaticProps() {
   try {
-    let apiUrl = "https://heritage.top-wp.com/api/visits?populate=*";
+    let apiUrl = "https://heritage.top-wp.com/api/visits";
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Failed to fetch visits");
