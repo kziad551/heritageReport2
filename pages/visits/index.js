@@ -7,13 +7,7 @@ import Navbar from "../../components/Navbar";
 const Visits = ({ initialVisits }) => {
   const router = useRouter();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      router.replace("/login");
-    }
-  }, []);
+  
 
   const [visits, setVisits] = useState(initialVisits);
   const [error, setError] = useState(null);
