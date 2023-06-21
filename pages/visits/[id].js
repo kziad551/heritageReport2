@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Navbar from "../../components/Navbar";
+import Head from "next/head";
 
 const VisitDetails = ({ visit }) => {
   const visitId = visit.data[0].id;
   const visits = visit.data[0].attributes;
+
   const baseUrl = "https://heritage.top-wp.com";
   const router = useRouter();
 
@@ -125,9 +127,15 @@ const VisitDetails = ({ visit }) => {
     );
   }
 
+
+  
   return (
+    
     <div>
-      <Navbar />
+       <Head>
+        <title>Heritage</title>
+      </Head>
+      
 
       <div className="container">
         <h1>Visit Details</h1>
@@ -882,7 +890,7 @@ const VisitDetails = ({ visit }) => {
 
 export default VisitDetails;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { params, req, res } = context;
   const { id } = params;
 
