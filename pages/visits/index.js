@@ -185,18 +185,10 @@ const Visits = ({ initialVisits }) => {
 };
 export default Visits;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
-    let apiUrl = "https://heritage.top-wp.com/api/visits";
-    const timestamp = Date.now(); // Generate a cache-busting value
-    const urlWithTimestamp = `${apiUrl}?timestamp=${timestamp}`;
-
-    const response = await fetch(urlWithTimestamp, {
-      headers: {
-        "Cache-Control": "no-cache",
-        Pragma: "no-cache",
-      },
-    });
+    const apiUrl = "https://heritage.top-wp.com/api/visits";
+    const response = await fetch(apiUrl);
 
     if (!response.ok) {
       throw new Error("Failed to fetch visits");
@@ -218,4 +210,5 @@ export async function getStaticProps() {
     };
   }
 }
+
 
