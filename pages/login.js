@@ -15,7 +15,7 @@ export default function Login({role}) {
     try {
       if (username === "adminReport") {
         const response = await axios.post(
-          'https://heritage.top-wp.com/api/auth/local',
+          'https://heritage1.top-wp.com/api/auth/local',
           {
             identifier: username,
             password: password,
