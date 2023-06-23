@@ -57,73 +57,73 @@ const VisitDetails = ({ visit }) => {
 
   if (currentPhotoOfSite && currentPhotoOfSite.data) {
     imagecurrentPhotoOfSite = currentPhotoOfSite.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
 
   if (sitephotosBeforeEvent && sitephotosBeforeEvent.data) {
     imagesitephotosBeforeEvent = sitephotosBeforeEvent.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (exPhotos && exPhotos.data) {
     imageexPhotos = exPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (roofPhotos && roofPhotos.data) {
     imageroofPhotos = roofPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (outsidePhotos && outsidePhotos.data) {
     imageoutsidePhotos = outsidePhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (entrancePhotos && entrancePhotos.data) {
     imageentrancePhotos = entrancePhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (externalPhotos && externalPhotos.data) {
     imageexternalPhotos = externalPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (structuralPhotos && structuralPhotos.data) {
     imagestructuralPhotos = structuralPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (inWallsPhotos && inWallsPhotos.data) {
     imageinWallsPhotos = inWallsPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (inCeillingPhotos2 && inCeillingPhotos2.data) {
     imageinCeillingPhotos2 = inCeillingPhotos2.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (inFloorPhotos && inFloorPhotos.data) {
     imageinFloorPhotos = inFloorPhotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (archaeologicalremainsphotos && archaeologicalremainsphotos.data) {
     imagearchaeologicalremainsphotos = archaeologicalremainsphotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (generalPhotosBuilding && generalPhotosBuilding.data) {
     imagegeneralPhotosBuilding = generalPhotosBuilding.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
   if (infeatureditemsphotos && infeatureditemsphotos.data) {
     imageinfeatureditemsphotos = infeatureditemsphotos.data.map(
-      (item) => item.attributes.formats.small.url
+      (item) =>item.attributes.formats?.small?.url || item.attributes.url
     );
   }
 
