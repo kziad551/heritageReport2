@@ -7,6 +7,8 @@ import Navbar from "../../components/Navbar";
 const Visits = ({ initialVisits }) => {
   const router = useRouter();
 
+  
+
   const [visits, setVisits] = useState(initialVisits);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -186,12 +188,23 @@ export default Visits;
 export async function getStaticProps() {
   try {
     let apiUrl = "https://heritage.top-wp.com/api/visits";
-    const response = await fetch(apiUrl);
+    const timestamp = Date.now(); // Generate a cache-busting value
+    const urlWithTimestamp = `${apiUrl}?timestamp=${timestamp}`;
+
+    const response = await fetch(urlWithTimestamp, {
+      headers: {
+        "Cache-Control": "no-cache",
+        Pragma: "no-cache",
+      },
+    });
+
     if (!response.ok) {
       throw new Error("Failed to fetch visits");
     }
+
     const data = await response.json();
     const initialVisits = data.data;
+
     return {
       props: {
         initialVisits,
@@ -205,3 +218,4 @@ export async function getStaticProps() {
     };
   }
 }
+
