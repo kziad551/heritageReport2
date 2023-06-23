@@ -29,7 +29,7 @@ const Visits = ({ initialVisits }) => {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://heritage.top-wp.com/api/visits/${id}`,
+          `https://heritage1.top-wp.com/api/visits/${id}`,
           {
             method: "DELETE",
             headers: {
@@ -187,7 +187,7 @@ export default Visits;
 
 export async function getServerSideProps() {
   try {
-    const apiUrl = "https://heritage.top-wp.com/api/visits";
+    const apiUrl = "https://heritage1.top-wp.com/api/visits";
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
