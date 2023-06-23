@@ -10,7 +10,7 @@ const VisitDetails = ({ visit }) => {
   const visitId = visit.data[0].id;
   const visits = visit.data[0].attributes;
 
-  const baseUrl = "https://heritage.top-wp.com";
+  const baseUrl = "https://heritage1.top-wp.com";
   const router = useRouter();
 
   useEffect(() => {
@@ -898,7 +898,7 @@ export async function getServerSideProps(context) {
   // For example, you can check if the user's session exists or if there is a valid authentication token
 
   const response = await fetch(
-    `https://heritage.top-wp.com/api/visits/?filters[id]=${id}&populate=*`
+    `https://heritage1.top-wp.com/api/visits/?filters[id]=${id}&populate=*`
   );
   const data = await response.json();
 
