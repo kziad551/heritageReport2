@@ -93,7 +93,7 @@ const Visits = ({ initialVisits }) => {
         <div className="search-container">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search.."
             value={searchTerm}
             onChange={handleSearchChange}
           />
