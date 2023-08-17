@@ -6,9 +6,6 @@ import Navbar from "../../components/Navbar";
 
 const Visits = ({ initialVisits }) => {
   const router = useRouter();
-
-  
-
   const [visits, setVisits] = useState(initialVisits);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
