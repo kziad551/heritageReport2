@@ -184,7 +184,7 @@ export default Visits;
 
 export async function getServerSideProps() {
   try {
-    const apiUrl = "https://heritage1.top-wp.com/api/visits";
+    const apiUrl = "https://heritage1.top-wp.com/api/visitss";
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
